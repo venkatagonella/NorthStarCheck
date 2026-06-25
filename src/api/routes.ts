@@ -20,7 +20,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 export function createApp(): Router {
   const router = Router();
 
-  router.use(authMiddleware);
+  router.use('/api', authMiddleware);
 
   router.get('/api/roles/registry', (req: AuthenticatedRequest, res) => {
     const ctx = requireAuth(req);
@@ -99,8 +99,8 @@ export function createApp(): Router {
     }
   });
 
-  router.get('/ui/job-actions', (_req, res) => {
-    res.sendFile(path.join(__dirname, '../ui/job-actions.html'));
+  router.get(['/ui/job-actions', '/ui/create-job'], (_req, res) => {
+    res.sendFile(path.join(__dirname, '../ui/create-job.html'));
   });
 
   return router;

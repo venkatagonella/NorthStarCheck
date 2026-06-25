@@ -18,7 +18,15 @@ npm test
 npm run dev
 ```
 
-Send `x-user-id` and `x-tenant-id` headers on API requests.
+## UI
+
+Phenom Design System (PDS) styled CRM shell modeled after Pipeline **Create New Job**:
+
+- **Demo hub:** `http://localhost:3000/`
+- **Create flow:** `/ui/create-job?userId=secondary-demo&tenantId=demo-tenant`
+- **Job details:** `/ui/create-job?jobId=...&userId=...&tenantId=demo-tenant`
+
+Design tokens: `src/ui/pds.css` (Poppins, slate palette, purple accent per [PDS](https://pds.phenom.com/angular/index.html?path=/docs/introduction-getting-started--documentation)).
 
 ## Spec
 
